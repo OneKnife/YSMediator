@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "YSMediator"
+  s.name         = "YSMediator.Swift"
   s.version      = "0.0.1"
   s.summary      = "Swift项目组件化中间件"
 
