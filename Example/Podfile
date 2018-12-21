@@ -7,8 +7,9 @@ target 'Example' do
 
   # Pods for Example
   
-  pod 'YSMediator', :path => '../'
-  
+  pod 'YSMediator', :path => '../' 
+  pod 'ModuleA', :path => '../ModuleA'  
+  pod 'YSMediator_ModuleA', :path => '../YSMediator_ModuleA'
   target 'ExampleTests' do
     inherit! :search_paths
     # Pods for testing

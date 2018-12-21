@@ -7,17 +7,19 @@
 //
 
 import UIKit
+import YSMediator
+import YSMediator_ModuleA
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func actionTargetA() {
+        if let vc = YSMediator.shareInstance.ModuleA_FirstViewController(callBack: nil) {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 
 

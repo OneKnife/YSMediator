@@ -1,16 +1,28 @@
 PODS:
+  - ModuleA (0.0.1):
+    - YSMediator
   - YSMediator (0.0.1)
+  - YSMediator_ModuleA (0.0.1):
+    - YSMediator
 
 DEPENDENCIES:
+  - ModuleA (from `../ModuleA`)
   - YSMediator (from `../`)
+  - YSMediator_ModuleA (from `../YSMediator_ModuleA`)
 
 EXTERNAL SOURCES:
+  ModuleA:
+    :path: "../ModuleA"
   YSMediator:
     :path: "../"
+  YSMediator_ModuleA:
+    :path: "../YSMediator_ModuleA"
 
 SPEC CHECKSUMS:
-  YSMediator: bf5dd74c1185959aee5dd5dfea2808dc82714b16
+  ModuleA: 827ff624902c74268baffe8fee542f87bebd011f
+  YSMediator: e098567550b04c6b8437cd8c15401c382eef73e0
+  YSMediator_ModuleA: 2d6cc65636f4dcff3fe56dbaba695121f85f8477
 
-PODFILE CHECKSUM: bdb7ec33c696aedf2edefb1dbd6ab22ae4636d98
+PODFILE CHECKSUM: 7d26de9eff0670921958911a2ba74d73b81a0cab
 
 COCOAPODS: 1.5.3

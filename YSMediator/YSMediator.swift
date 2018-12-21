@@ -8,13 +8,15 @@
 
 import UIKit
 
+public let kYSMediatorParamsKeySwiftTargetModuleName = "kCTMediatorParamsKeySwiftTargetModuleName"
+
 /// 组件化中间件基类
-class YSMediator {
+open class YSMediator {
     public static let shareInstance: YSMediator = YSMediator()
-    private var cachedTarget: [String: AnyObject] = [String: AnyObject]()
+    fileprivate var cachedTarget: [String: AnyObject] = [String: NSObject]()
 }
 
-typealias YSMeiatorCallBack = ((_ result: [String: AnyObject]?) -> Void)?
+public typealias YSMeiatorCallBack = ((_ result: [String: AnyObject]?) -> Void)?
 
 extension YSMediator {
     
@@ -58,7 +60,7 @@ extension YSMediator {
     
     /// 内部调用方法
     /// - Returns: 返回成功或者失败, 对象, nil
-    public func perform(nameSpace space: String, target targetName: String, action actionName: String, params: [String: Any]?, shouldCacheTarge: Bool = false) -> AnyObject? {
+    public func perform(nameSpace space: String, target targetName: String, action actionName: String, params: [String: AnyObject]?, shouldCacheTarge: Bool = false) -> AnyObject? {
         
         var targetObj: AnyObject?
         let className = "\(space).Target_\(targetName)"
@@ -67,7 +69,7 @@ extension YSMediator {
         }
         
         if targetObj == nil {
-            let targetClass = NSClassFromString(className) as? YSMediatorTarget.Type
+            let targetClass = NSClassFromString(className) as? NSObject.Type
             guard let targetType = targetClass else { return nil }
             targetObj = targetType.init()
             if shouldCacheTarge, targetObj != nil {
