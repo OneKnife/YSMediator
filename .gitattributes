@@ -1,0 +1,2 @@
+*.podspec linguist-language=Swift
+*.xcodeproj linguist-language=Swift
